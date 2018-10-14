@@ -1,0 +1,379 @@
+{% extends 'opening/twwdbase.html' %}
+
+{% block tele-slide %}
+
+ {% load static %}
+
+<style>
+
+    
+    .tele-slider-holder{
+        width:1016px;
+        height:450px;
+        position:absolute;
+        margin-top:100px;
+    }
+    
+    .slide-back{
+         
+         background-image:url("{% static 'photos/diag.png' %}");
+        background-size: cover;
+       
+    }
+    
+    .tele-slide{
+        width:254px;
+        height:200px;
+        position:absolute;
+       
+     
+    }
+    
+    .tele-slider-1{
+       
+        margin-left:0px;
+      
+    }
+     .tele-slider-2{
+        margin-left:508px;
+    }
+     .tele-slider-3{
+        margin-left:1016px;
+    }
+    .tele-slider-4{
+        margin-left:1524px;
+    }
+    
+     .tele-slider-5{
+     margin-left:3048px;
+       
+    }
+     .tele-slider-6{
+        margin-left:2032px;
+    }
+     .tele-slider-7{
+        margin-left:2540px;
+    }
+    
+    
+    .tele-slider-8{
+        margin-left:3556px;
+    }
+    
+     .tele-slider-9{
+        margin-left:4064px;
+    }
+    
+     .tele-slider-10{
+        margin-left:4572px;
+    }
+    
+     .tele-slider-11{
+        margin-left:1524px;
+    }
+    
+    .tele-slider-a{
+        margin-left:254px;
+    }
+    .tele-slider-b{
+        margin-left:762px;
+    }
+    .tele-slider-c{
+        margin-left:1270px;
+    }
+    .tele-slider-d{
+        margin-left:1778px;
+    }
+    
+     .tele-slider-e{
+        margin-left:2286px;
+    }
+    .tele-slider-f{
+        margin-left:2794px;
+    }
+    .tele-slider-g{
+        margin-left:3302px;
+    }
+    .tele-slider-h{
+        margin-left:3810px;
+    }
+    
+    
+    .block-1{
+        z-index:10;
+    
+    }
+    
+    .block-2{
+        z-index:1;
+       
+    }
+    
+    .push-waiting{
+        margin-left:1500px;
+    }
+    
+    .diag-tel{
+        margin-left:500px;
+        margin-top:300px;
+         width:520px;
+        height:420px;
+        background-image:url("{% static 'photos/diag-tele.png' %}");
+        background-size: cover;
+        position:absolute;
+        z-index:5;
+    }
+    
+    .diag-tel-a{
+        margin-left:500px;
+        margin-top:300px;
+         width:520px;
+        height:420px;
+        background-image:url("{% static 'photos/diag-tele.png' %}");
+        background-size: cover;
+        position:absolute;
+        z-index:5;
+    }
+    
+    .diag-tel-b{
+        margin-left:1020px;
+        margin-top:720px;
+         width:520px;
+        height:420px;
+        background-image:url("{% static 'photos/diag-tele.png' %}");
+        background-size: cover;
+        position:absolute;
+        z-index:5;
+    }
+    
+    
+    
+   
+    .pic-frame-top{
+
+        position: absolute;
+        z-index:10;
+        bottom:70%;
+        height:30%;
+        min-height:300px;
+        width:100%;
+        
+    }
+    
+    .pic-frame-bott{
+
+        position: absolute;
+        z-index:10;
+        top:70%;
+        height:30%;
+        min-height:300px;
+        width:100%;
+        bottom:0;
+    }
+    
+    .pic-frame-left{
+
+        position: absolute;
+        z-index:10;
+        left:67%;
+        width:33%;
+        min-height:300px;
+        height:100%;
+    }
+    
+    .pic-frame-right{
+     
+        position: absolute;
+        z-index:10;
+        right:67%;
+        width:33%;
+        min-height:300px;
+        height:100%;
+    }
+ 
+
+</style>
+
+ <div class = "diag-tel diag-tel-a"></div>
+
+
+
+
+
+
+
+<script src = "https://cdnjs.cloudflare.com/ajax/libs/d3/5.7.0/d3.min.js"></script>
+<script src='http://cdnjs.cloudflare.com/ajax/libs/gsap/1.18.0/TweenMax.min.js'></script>
+
+ <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script>
+    
+    
+     $(".diag-tel-a").animate({
+        'marginLeft' : "-=520px", //moves left
+        'marginTop' : "-=280px",
+        'height' : "+=420",
+        'width' : "+=520"
+        },5000,"linear");
+    
+    
+     timerd = setTimeout(function(){
+     $(".diag-tel-b").animate({
+        'marginLeft' : "-=520px", //moves left
+        'marginTop' : "-=280px",
+        'height' : "+=400",
+        'width' : "+=400"
+        },5000,"linear");
+    
+   },5000);
+    
+    
+      
+    /*
+    
+     timerd = setTimeout(function(){
+         $('.name-div').animate({
+        'marginLeft' : "-=600px" //moves left
+        
+        },1000,);
+          timerd = setTimeout(function(){
+         $('.text-div').animate({
+        'marginLeft' : "-=600px" //moves left
+        
+        },1000,);
+     },1000);
+     },2000);
+         
+     */
+    
+   
+    /*
+   runAnimation();
+     
+ function runAnimation(){
+          
+          
+           $(".block-1").animate({
+        'marginLeft' : "-=2032px" //moves left
+        
+        },14000,"linear");
+     
+    
+     
+     $(".block-2").animate({
+        'marginLeft' : "-=2032px" //moves left
+        
+        },14000,"linear");
+     
+      
+     
+     
+      timy5 = setTimeout(function(){
+         
+         
+          $(".block-1").animate({
+        'marginLeft' : "+=2032px" //moves left
+        
+        },0);
+         
+          timy4 = setTimeout(function(){
+          
+          /* $(".block-1").animate({
+        'marginLeft' : "-=2032px" //moves left
+        
+        },14000); 
+              
+              
+               $(".block-2").animate({
+        'marginLeft' : "+=2032px" //moves left
+        
+        },0);
+              runAnimation();
+             },7000);
+          
+        
+             },7000);
+     
+     
+    
+     
+     
+     //switch the classes now!!!
+        
+     
+ } */
+   /*
+     
+     timy = setTimeout(function(){
+         
+          $(".block-2").animate({
+        'marginLeft' : "-=4572px" //moves left
+        
+        },2000);
+         
+         timy5 = setTimeout(function(){
+         // $(".block-1").css('zIndex',1);
+         //$(".block-2").css('zIndex',10);
+             },100);
+         
+          
+        
+         repositionElements();
+     },1000);
+     
+
+     
+ }
+    
+    function repositionElements(){
+           $(".block-1").css('zIndex',0);
+          $(".block-1").animate({
+        'marginLeft' : "+=4572px" //moves left
+        
+        },0);
+        
+        timy3 = setTimeout(function(){
+            
+        timy4 = setTimeout(function(){
+         // $(".block-1").css('zIndex',10);
+         //$(".block-2").css('zIndex',1);
+             },100);
+         
+             $(".block-2").animate({
+        'marginLeft' : "+=4572px" //moves left
+        
+        },0);
+            
+            runAnimation();
+           
+     },1000);
+     
+        
+    }
+    
+   
+      
+     
+    
+   */
+    
+
+    
+
+    
+    
+     
+
+</script>
+
+
+
+
+
+{% endblock %}
+
+
+
+
+
+

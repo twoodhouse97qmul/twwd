@@ -1,0 +1,269 @@
+{% extends 'opening/twwdbase.html' %}
+
+{% block content %}
+
+{% load static %}
+   
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap.min.css' %}" />
+    <link rel="stylesheet" href="{% static 'css/style2.css' %}">
+
+<style>
+    
+    
+
+    
+    #MT{
+        color:#e3ab20;
+    }
+
+
+    
+    
+
+
+    
+    .backing-container{
+
+        padding-top:110px;
+    }
+    
+    #about-col-1{
+       
+    }
+    
+     #about-col-2{
+       
+    }
+    
+     #about-col-3{
+    
+    }
+    
+    
+    .about-text-div{
+        width:100%;
+        height:600px;
+        background-image:url("{% static 'newback.jpg' %}");
+        background-size:cover;
+        margin:0 auto;
+        border-radius:7px;
+        border-style:solid;
+        border-color:#e3ab20;
+        border-width: 2px;
+        margin-bottom: 15px;
+        padding: 10px 15px 15px 15px;
+    }
+    
+    
+    .navbar{
+        background-image:url("{% static 'newback.jpg' %}");
+        background-size:cover;
+        border-color:#e3ab20;
+        width:100%;
+        position:fixed;
+        z-index:300;
+        border-left:0;
+        border-right:0;
+        border-top:0;
+
+    }
+    
+    .wSmoke{
+        color:whitesmoke;
+    }
+    
+    .wSmoke:hover{
+        color:#e3ab20;
+    }
+    
+    
+
+    
+    .nav-logo-div{
+        width:60px;
+        height:60px;
+        background-image:url("{% static 'logotwwd.png' %}");
+        background-size:cover;
+        margin-top:3px;
+       
+    
+        
+    }
+    
+   
+    
+    
+
+</style>
+
+   
+
+
+
+{% block page_content %}
+
+
+
+{% endblock %}
+
+{% block optional_cover %}
+{% endblock %}
+
+
+
+
+
+    
+ 
+
+
+
+
+
+{% load static %}
+<script src="{% static 'js/vendor/jquery.ui.widget.js' %}"></script>
+  <script src="{% static 'js/jquery.iframe-transport.js' %}"></script>
+  <script src="{% static 'js/jquery.fileupload.js' %}"></script>
+
+
+
+<script>
+  
+   
+
+    /*
+    
+            var slideIndex2 = 1;
+showDivs2(slideIndex2);
+
+function plusDivs2(n) {
+   
+    showDivs2(slideIndex2 += n);
+}
+
+function showDivs2(n) {
+  
+    var i2;
+    var x2 = document.getElementsByClassName("historicalSlides");
+     
+    if (n > x2.length) {slideIndex2 = 1} 
+    if (n < 1) {slideIndex2 = x2.length} ;
+    for (i2 = 0; i2 < x2.length; i2++) {
+        x2[i2].style.display = "none"; 
+    }
+    x2[slideIndex2-1].style.display = "block"; 
+     
+    
+}
+    
+    
+    
+    
+    var slideIndex = 1;
+showDivs(slideIndex);
+
+function plusDivs(n) {
+  
+    showDivs(slideIndex += n);
+}
+
+function showDivs(n) {
+    var i;
+    var x = document.getElementsByClassName("modernSlides");
+    if (n > x.length) {slideIndex = 1} 
+    if (n < 1) {slideIndex = x.length} ;
+    for (i = 0; i < x.length; i++) {
+        x[i].style.display = "none"; 
+    }
+    x[slideIndex-1].style.display = "block"; 
+}
+    
+    
+    document.getElementById('leftArrow').onclick = function(){ plusDivs(-1); plusDivs2(-1);    };
+    document.getElementById('rightArrow').onclick = function(){ plusDivs(1); plusDivs2(1);     };
+    
+
+    
+    
+    
+    
+
+window.onresize = function(event) {
+
+resizeDiv();
+}
+
+function resizeDiv() {
+    
+   
+var vph = window.innerHeight;
+document.getElementById('frontText').style.height = vph+"px";
+document.getElementById('compCont1').style.height = vph+"px";
+    document.getElementById('compCont2').style.height = vph+"px";
+    document.getElementById('compCont3').style.height = vph+"px";
+  
+    document.getElementById('compCont5').style.height = vph+"px";
+document.getElementById('goalsText').style.height = vph+"px";
+    document.getElementById('involvedText').style.height = vph+"px";
+    document.getElementById('sendPhotosText').style.height = vph+"px";
+      
+    
+
+    
+    
+    
+   
+}
+    
+    resizeDiv();
+    
+   
+    
+    function initComparisons() {
+  var x, i;
+
+  x = document.getElementsByClassName("img-comp-overlay");
+  for (i = 0; i < x.length; i++) {
+   
+    compareImages(x[i]);
+  }
+  function compareImages(img) {
+    var slider, img, clicked = 0, w, h;
+  
+    w = img.offsetWidth;
+    h = img.offsetHeight;
+   
+    img.style.width = (w / 2) + "px";
+  
+      
+    slider = document.createElement("DIV");
+    slider.setAttribute("class", "img-comp-slider");
+
+    img.parentElement.insertBefore(slider, img);
+  
+    slider.style.top = (h / 2) - (slider.offsetHeight / 2) + "px";
+    slider.style.left = (w / 2) - (slider.offsetWidth / 2) + "px";
+    slider.style.paddingTop = "10px";
+      slider.style.paddingLeft = "12px";
+    slider.innerHTML = '<i class="fa fa-arrows-alt-h" aria-hidden="true"></i>';
+   
+    slider.addEventListener("mousedown", slideReady);
+ 
+    window.addEventListener("mouseup", slideFinish);
+    /*or touched (for touch screens:*/
+ 
+    /*
+  }
+}
+
+    initComparisons()
+    
+*/
+</script>
+
+
+
+
+
+{% endblock %}

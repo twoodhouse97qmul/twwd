@@ -1,0 +1,402 @@
+<html>
+
+
+<!-- Website Front Page -->
+<!-- The Page Is Composed of a header bar as well as links to the business and blogger pages -->
+
+
+
+     
+
+    <!-- The head contains the regular settings, the bootstrap style sheet links as well as links to the fa glyphicons and the general css script for the page. -->
+    <head>
+        <!-- MUST COME FIRST -->
+        <meta charset="utf-8">
+            <meta http-equiv="X-UA-Compatible" content="IE=edge">
+                <meta name="viewport" content="width=device-width, initial-scale=1">
+     <title>TWWD</title>
+                    
+                    <!-- STYLE SHEETS -->
+                        <!-- fa glyphicons -->
+                           
+  
+                                
+                                <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+                                <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+                                <!--[if lt IE 9]>
+                                 <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+                                 <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+                                 <![endif]-->
+                           
+                                </head>
+                    
+
+        {% load static %}
+     <link rel="stylesheet" type="text/css" href="{% static 'css/font-awesome.min.css' %}" />
+    <link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap.min.css' %}" />
+  
+                    
+                   
+    
+    <body>
+   
+  
+        
+        {% block tele-slide %}
+
+{% endblock %}
+        
+              {% block loading-screen %}
+        
+           {% endblock %}
+       
+        
+        
+<div class = "contact-holder" >
+    <div class = "con-backing"></div>
+    
+         {% block progSlider %}
+        
+           {% endblock %}
+    
+    
+    
+</div>
+
+       
+   
+
+
+                  
+     
+       
+    
+           
+   
+    
+        <div class = "all-stuff">
+      {% block content %}
+        
+           {% endblock %}
+            
+            </div>
+   
+       
+        
+        <!-- Include all compiled plugins (below), or include individual files as needed -->
+        <script src="{% static 'js/bootstrap.min.js' %}"></script>
+      
+    
+        <script>
+            
+            
+             
+            
+            /*
+  
+
+            
+            */
+            
+            $(".contact-holder").hide();
+            
+    
+    $(function()
+{
+    var app_cover = $('#app-cover'), inp = $('.inp'), prevAction = $('#prev-action-btn'), nextAction=$('#next-action-btn'), stepComplete = false, progress = $('#progress'), timeOut = null, stepsArr = ['email','username','password','comment'], stepNumber = 1, lastCompletedStep=0, totalSteps = stepsArr.length-1;
+
+    function checkApp()
+    {
+        if( stepNumber > 1 )
+            return;
+
+        var active = false;
+        inp.each(function()
+        {
+            if( $(this).val().trim().length > 0 )
+                active = true;
+        });
+
+        if( active )
+            app_cover.addClass('active');
+        else
+        {
+            app_cover.removeClass('active');
+            inp.parent('div').removeClass('active');
+        }
+    }
+
+    function _a()
+    {
+        nextAction.addClass('active');
+        stepComplete = true;
+        if( lastCompletedStep < stepNumber )
+            lastCompletedStep = stepNumber;
+    }
+
+    function _b()
+    {
+        nextAction.removeClass('active');
+        stepComplete = false;
+    }
+
+    function checkInput()
+    {
+        var _this = $(this), regex, index = stepNumber - 1, _val = _this.val().trim();
+        if( stepsArr[index] == 'email' )
+        {
+            regex = /^([a-zA-Z0-9_.+-])+\@(([a-zA-Z0-9-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+            if(regex.test(_val))
+                _a();
+            else
+                _b();
+        }
+        else if( stepsArr[index] == 'username' )
+        {
+            clearTimeout(timeOut);
+            timeOut = setTimeout(function()
+            {
+                if( _val.length > 0 )
+                    _a();
+                else
+                    _b();
+            },500);
+        }
+        else if( stepsArr[index] == 'password' )
+        {
+            if(_val.length >= 5)
+                _a();
+            else
+                _b();
+        } else if( stepsArr[index] == 'comment' )
+        {
+            if(_val.length >= 3)
+                _a();
+            else
+                _b();
+        }
+    }
+
+    function clearForm()
+    {
+        inp.val('');
+        $('.inp-box').removeClass('active inactive');
+        nextAction.removeClass('active');
+        prevAction.removeAttr('class');
+        nextAction.removeAttr('class');
+    }
+
+    function moveToPreviousStep()
+    {
+        --stepNumber;
+
+        if(stepNumber < 1)
+        {
+            stepNumber = 1;
+            prevAction.removeClass('active');
+            return;
+        }
+        else
+        {
+            if(stepNumber == 1)
+                prevAction.removeClass('active');
+
+            if( stepNumber <= lastCompletedStep )
+                stepComplete = true;
+
+            nextAction.addClass('active');
+
+            progress.width( (((stepNumber-1)/totalSteps)*100)+'%');
+            $('#'+stepsArr[stepNumber]).removeClass('active');
+            $('#'+stepsArr[stepNumber - 1]).removeClass('inactive');
+        }
+    }
+
+    function moveToNextStep()
+    {
+        if(stepComplete && ($('#'+stepsArr[stepNumber - 1]).find('.inp').val().trim().length > 0) )
+        {
+            progress.width( ((stepNumber/totalSteps)*100)+'%');
+
+            prevAction.addClass('active');
+
+            if( stepNumber == totalSteps )
+            {
+                setTimeout(function()
+                {
+                    $('#progress-bar-cover').addClass('hide-form');
+
+                    $('#working').fadeIn(0);
+
+                    setTimeout(function()
+                    {
+                        $('#working').addClass('inactive');
+                        clearForm();
+                         
+                    },2300);
+
+                    setTimeout(function()
+                    {
+                        $('#acc-success').addClass('active');
+                       
+                    },3300);
+
+                },500);
+                
+                setTimeout(function (){
+                        
+                        $(".contact-holder").fadeOut();
+                      
+                    
+                },7000);
+                
+                  
+       var ajaxOptions = {
+              type: 'POST',
+              url:'contactme',
+              data:{
+                  namm:$("#name-in").val(),
+                  emm:$("#em-in").val(),
+                  mess:$("#mess-in").val()
+              },
+              success : function () {
+               
+              }
+            }
+
+            $.ajax(ajaxOptions);
+      
+
+                return;    
+            }
+
+            $('#'+stepsArr[stepNumber-1]).addClass('inactive');
+            $('#'+stepsArr[stepNumber]).addClass('active');
+
+            if( stepNumber > lastCompletedStep )
+            {
+                lastCompletedStep = stepNumber;
+                stepComplete = false;
+            }
+
+            ++stepNumber; // Now on next step     
+        
+            if( (stepNumber <= lastCompletedStep) && ($('#'+stepsArr[stepNumber - 1]).find('.inp').val().trim().length > 0)  )
+                nextAction.addClass('active');
+            else
+                nextAction.removeClass('active');
+        }
+        
+        if(stepNumber == 3  ){
+            
+        
+            
+         $(".contact-holder").animate({
+        'height' : "-=150px" //moves left
+        
+        });
+            
+      
+         $("#inp-box-cover").animate({
+        'height' : "+=150px" //moves left
+        
+        });
+            
+            
+            
+        
+            
+      
+            
+      
+      
+         
+        
+            
+           
+    
+             
+           }
+    }
+
+    app_cover.hover( function()
+    { 
+        var f_elm = $('#'+stepsArr[0]); 
+        if( ! $(this).hasClass('active') )
+        {
+            $(this).addClass('active');
+            f_elm.addClass('active');
+            setTimeout(function(){ f_elm.find('input').focus(); },1205);
+            stepNumber = 1;
+            lastCompletedStep = 0;
+            stepComplete = false;
+        }
+    }, 
+    function()
+    { 
+        checkApp();
+    });
+
+    inp.on('keyup',checkInput);
+
+    prevAction.on('click',moveToPreviousStep);
+    nextAction.on('click',moveToNextStep);
+});
+            
+          
+   /* $(".contact-butt").click(function (){
+    
+    
+        $('.contact-butt').animate({
+        'marginTop' : "+=150px" //moves left
+        });
+    
+    
+    
+    
+    $("#contact-item").css('background-color','white');
+
+    $(".sign-up-holder").fadeIn();
+    
+    
+
+    
+
+    
+    /*inp = $(".active");
+    
+    inp.each(function()
+        {
+        
+            //alert($(this).attr('id'));
+            //here is where we decide whether to center or not:
+        
+          
+            
+        }); */
+    
+    
+
+        
+ 
+
+    
+
+
+
+</script>
+        
+         <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+       
+
+       
+        
+    
+        
+        
+     
+        
+    </body>
+
+</html>
+

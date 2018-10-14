@@ -1,0 +1,9 @@
+{% extends 'opening/twwdbase.html' %}
+
+{% block email %}
+
+    <form method="POST" class="email">{% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit" class="save btn btn-default">Save</button>
+    </form>
+{% endblock %}

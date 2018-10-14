@@ -1,0 +1,385 @@
+{% extends 'opening/twwdcoveredsliderbase.html' %}
+
+{% block slide_1_block %}
+
+<style>
+
+   
+    .ani-frame{
+            width:96%;
+        height:96%;
+        position:relative;
+        left:2%;
+        right:2%;
+        top:2%;
+        border:none;
+        
+        
+        }
+    
+    .con-butty{
+        margin:0 auto;
+        margin-top:40px;
+    }
+    
+    .bing{
+        background-color: black;
+        }
+    
+    
+    .bingpot{
+        background-color:#2A2A2A;
+        border-color:pink;
+    }
+    
+    .slider_titlo{
+        border-width:0;
+        border-bottom:2px;
+        border-style: solid;
+        margin-bottom:10px;
+      
+    }
+    
+    .media-links-div{
+       
+        background-color: red;
+    }
+    
+</style>
+
+
+
+  <div class="slider_titlo">
+            <span class="slider_titlo_text"><h1>Welcome</h1></span>
+           
+          </div>
+          
+
+          <p class="news__txt">
+         TWWD is an individually run freelance web application development company based in Wiveton, Norfolk.
+
+              <br> <br> I specialise in websites for rural businesses and in aiding small companies to realise their true online potential.<br><br>
+              
+              I aim to offer proffessional quality for extremely competitive prices.<br><br>
+              
+              
+
+
+          </p>
+
+          <div class="news__img">
+             {% load static %}
+            <img src="{% static 'photos/welcome-logo.jpg' %}" alt="news">
+          </div>
+
+
+{% endblock %}
+
+
+{% block slide_4_block %}
+
+
+<div class="news-date" id = "cont-ND">
+    <span class="news-date__title" id = "cont-T1">Contact</span>
+    <span class="news-date__txt" id = "cont-T2">Contact Forms made simple and stylish.</span>      
+</div>
+
+
+
+<p class="news__txt"> Please contact me by email to book a consultation appointment.
+</p>
+
+<h4><i class="fas fa-envelope"></i> twwdwebdesign@gmail.com </h4>
+   
+    <button class = "btn btn-primary con-butty">Use The Quick Contact Tool</button>
+    
+ 
+    
+  
+
+      <script>
+         
+
+          $(".con-butty").on('click',function(){
+            
+              //$(".all-stuff").hide();
+              $(".contact-holder").css("zIndex","9999999999999");
+             $(".contact-holder").fadeIn();
+          }); 
+          
+</script>
+   
+
+
+  
+          
+{% endblock %}
+            
+    <script>
+        /*
+        var inSUH = 0;
+         var inSlider = 0;
+
+        
+        
+      
+  
+        
+   
+       
+        $('.sign-up-holder').mouseenter(function(){
+            
+            inSUH = 1;
+        });
+        
+          $('.sign-up-holder').mouseleave(function(){
+            
+            inSUH = 0;
+              
+              timeOut2 = setTimeout(function()
+            {
+                
+        
+                if(inSlider == 0){
+               
+                   hideContactArea();
+                   }
+            },100);
+              
+              
+        });
+        
+        
+        $('#contact-item').mouseenter(function(){
+            inSlider = 1;
+           showContactArea();
+           
+        });
+        
+        
+           $('#contact-item').mouseleave(function(){
+               inSlider = 0;
+            timeOut = setTimeout(function()
+            {
+                
+        
+                if(inSUH == 0){
+                   
+                   hideContactArea();
+                   }
+            },100);
+        });
+        
+        
+        
+      
+         
+        
+        function showContactArea(){
+            
+            placeSUH();
+            $(".sign-up-holder").fadeIn();
+             
+        } 
+        
+        
+        function hideContactArea(){
+            
+                        $(".sign-up-holder").fadeOut();
+                         
+        }
+        
+        
+        function placeSUH(){
+                  
+            var posi4 = $('#cont-ND').offset();
+            var leftMargg = posi4.left;
+             
+            var inputNum = leftMargg+"";
+            var integer = parseInt(inputNum, 10); 
+           
+                 
+                 
+            if(integer<=-3000){
+              
+                $('.sign-up-holder').css("left",'3%');
+                $('.sign-up-holder').css("right",'71%');
+             
+                
+              
+               
+                
+            } else if (integer<=-2400){
+                    $('.sign-up-holder').css("right",'37%');
+                   $('.sign-up-holder').css("left",'37%');
+                
+                
+            } else {
+              
+                
+                 $('.sign-up-holder').css("right",'6%');
+                $('.sign-up-holder').css("left",'68%');
+                 
+               
+              
+            }
+        }
+        
+        
+        
+        */
+        
+        
+        
+        
+        
+</script>
+
+
+       
+
+{% block slide_3_block %}
+
+    <div class="news-date">
+            <span class="news-date__title">Elegence And Simplicity</span>
+            <span class="news-date__txt"></span>
+          </div>
+       
+
+          <p class="news__txt">
+            something about visuals themes and styles. A wide range of themes at my disposal, I have frequently created new colour schemes in order to match your companies existing branding.
+
+GONE ARE THE DAYS OF DREARY STATIC WEBSITES WHICH ARE A CHORE TO READ - your website has the potential to be so much more. Helping you to grab your audiences attention and keep it.
+          </p>
+
+           <div class="news__img bingpot">
+           <iframe src="/colours" class = "ani-frame"></iframe>
+          </div>
+
+{% endblock %}
+{% block slide_2_block %}
+
+    <div class="news-date">
+            <span class="news-date__title">Why Have A Website?</span>
+          </div>
+          
+          <p class="news__txt">
+              In 2018, having an attractive, professional website is becoming essential in order to modernise many aspects of traditional business and to maintain a healthy company. <br><br> By interacting using social media and other online tools linked to your website, you can greatly help boost the image and reputation of your brand, allowing you to take your business to the next level. 
+              
+          </p>
+
+          <div class="news__img">
+            {% load static %}
+            <img src="{% static 'photos/potential.jpg' %}" alt="news">
+          </div>
+
+{% endblock %}
+{% block slide_5_block %}
+
+
+      <div class="slider_titlo">
+            <span class="slider_titlo_text"><h1>Cookies</h1></span>
+           
+          </div>
+         
+     
+
+          <p class="news__txt">
+            
+        
+              
+         Simply put, Cookies are what allow modern websites to tailor the website experience uniquely to each user. <br> <br>
+              
+         They can also help to provide valuable feedback in a simple and clear way that can help you make small positive changes to the way you communicate with your customers.<br><br>
+              
+         I ensure that I implement these technologies in a <b>simple</b> way, stripping away many of the uneeded comlpexities ensuring the use of cookies is <b>smooth</b> and essentially <b>unnoticeable</b>.
+              
+         
+
+          </p>
+
+          <div class="news__img">
+            {% load static %}
+            <img src="{% static 'photos/analytics.jpg' %}" alt="news">
+          </div>
+
+{% endblock %}
+
+{% block slide_8_block %}
+
+      <div class="slider_titlo">
+            <span class="slider_titlo_text"><h1>Animation</h1></span>
+           
+          </div>
+         
+
+          <p class="news__txt">
+           
+              
+I am trained to utilise the Three.js platform in order to plug in modern, highly responsive and personalised animations into your website.<br><br>
+              
+Adding animated features to your site can help to drastically improve the professionalism of your website and make it more enjoyable to explore.<br><br>
+              
+Make your website <b>Come Alive.</b> The sky really is the limit.<br><br>
+              
+    
+          </p>
+
+
+
+          <div class="news__img bing">
+          <iframe src="/falling" class = "ani-frame"></iframe> 
+          </div>
+
+{% endblock %}
+
+{% block slide_7_block %}
+
+     
+   <div class="slider_titlo">
+            <span class="slider_titlo_text"><h1>Security</h1></span>
+           
+          </div>
+
+          <p class="news__txt">
+            
+              Cyber security is what I dedicate a lot of my personal time to outside of web developement, Currently I am waiting to begin my job within the field of cyber security for in late November. For this reason it will be of great personal embarressent to me if any of the sites I design are found to be vulnerable.<br><br>
+              
+            You can be at ease knowing that I will professionally weigh all the risks against your site and ensure you have the correct mechanisms in place to ensure you have complete peace of mind.
+        
+          </p>
+
+          <div class="news__img">
+               {% load static %}
+            <img src="{% static 'photos/security.png' %}" alt="news">
+          </div>
+
+{% endblock %}
+
+{% block slide_6_block %}
+
+      
+
+   <div class="slider_titlo">
+            <span class="slider_titlo_text"><h2>Flexibility and Control</h2></span>
+           
+          </div>
+         
+
+          <p class="news__txt">
+           
+              All Websites are deployed alongside a simple and secure administration interface. This allows you to interact with your site and make changes quickly and easily.<br><br> The interface is clearly laid out and simple. <b>ANYONE</b> could use it!<br><br>The interface will be personalised to your needs, allowing you to conveniently carry out any action on your site that you require. 
+            
+          </p>
+
+          <div class="news__img">
+               {% load static %}
+            <img src="{% static 'photos/adminView.jpg' %}" alt="news">
+          </div>
+
+{% endblock %}
+
+
+
+
+

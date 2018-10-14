@@ -1,0 +1,35 @@
+{% extends 'opening/twwdbase.html' %}
+
+{% block content%}
+<html lang="en" >
+
+<head>
+  <meta charset="UTF-8">
+  <title>ThreeJS dancing bars</title>
+  
+  
+  {% load static %}
+      <link rel="stylesheet" href="{% static 'css/spint' %}">
+
+  
+</head>
+
+<body>
+
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/three.js/96/three.min.js'></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/stats.js/r16/Stats.min.js'></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/dat-gui/0.7.2/dat.gui.min.js'></script>
+<script src='https://threejs.org/examples/js/controls/OrbitControls.js'></script>
+
+  
+
+    {% load static %}
+    <script  src="{% static 'js/spint2.js' %}"></script>
+
+
+
+
+</body>
+
+</html>
+{% endblock %}

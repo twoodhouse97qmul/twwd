@@ -1,0 +1,176 @@
+{% extends 'opening/meloncoveredsliderbase.html' %}
+
+ {% load static %}
+     <link rel="stylesheet" type="text/css" href="{% static 'css/font-awesome.min.css' %}" />
+    <link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap.min.css' %}" />
+
+{% block bubble-block %}
+<style>
+  
+   
+    
+    
+
+
+#bubbleGen {
+	
+	width:300px;
+    height:300px;
+	border-radius: 50%;
+	
+	transition: .2s transform;
+
+    margin:0 auto;
+   
+   
+}
+    
+    
+#bubbleGen.dragging {
+	transform: scale( 1.4 );
+}
+
+.bubble {
+	position: absolute;
+	box-sizing: border-box;
+	border-radius: 50%;
+	background-color: dodgerblue;
+	opacity: .6;
+	transition:
+		.1s opacity,
+		.05s transform;
+      z-index:999999999999;
+  
+}
+.bubble.pop {
+	transform: scale( 1.4 );
+	border: 8px solid dodgerblue;
+	background-color: transparent;
+	opacity: 0;
+}
+
+    
+    .bub-hold{
+        width:50px;
+        height:420px;
+        
+        padding-top:200px;
+        
+    }
+
+
+</style>
+
+<div class = "bub-hold">
+
+<div id="bubbleGen"></div>
+    
+    </div>
+
+<script>
+    
+    
+    
+
+    
+ 
+    
+const bubbleGen = document.querySelector( "#bubbleGen" );
+const colorful = document.querySelector( "input" );
+const bubbles = new Map();
+const colors = [
+	"dodgerblue", "royalblue",
+	"tomato", "darkorange", "indianred", "red",
+	"lime", "limegreen",
+	"yellow", "gold",
+	"hotpink", "palevioletred",
+	"rebeccapurple", "indigo", "blueviolet",
+	"violet", "fuchsia",
+];
+
+let bubbleIdMax = 0;
+let secForNextBubble = 0;
+let currentTime = Date.now();
+let previousTime = currentTime;
+let bubbleGenX;
+let bubbleGenY;
+let bubbleGenW;
+let dragging;
+
+function lg( a ) { return console.log.apply( console, arguments ), a; }
+
+window.onresize = () => {
+	const bcr = bubbleGen.getBoundingClientRect();
+
+	bubbleGenX = bcr.left + bcr.width / 2;
+	bubbleGenY = bcr.top + bcr.width / 2;
+	bubbleGenW = bcr.width;
+};
+
+
+
+
+function createBubble() {
+	const bb = document.createElement( "bubble" ),
+		st = bb.style,
+		id = ++bubbleIdMax;
+
+	bb.className = "bubble";
+	bb.dataset.id = id;
+	bb.dataset.speed = 2 + Math.random();
+	bb.dataset.poptime = currentTime + ( 3 + 2 * Math.random() ) * 1000;
+	bb.dataset.wave = Math.random();
+	st.top = bubbleGenY + "px";
+	st.left = bubbleGenX + ( bubbleGenW / -2 + Math.random() * bubbleGenW ) + "px";
+	st.width =
+	st.height = "0px";
+	
+		st.backgroundColor = colors[ Math.floor( colors.length * Math.random() ) ];
+	
+	bubbles.set( id, bb );
+	document.body.append( bb );
+}
+
+function frame() {
+	currentTime = Date.now();
+	if ( currentTime - previousTime > secForNextBubble * 1000 ) {
+		createBubble();
+		previousTime = currentTime;
+		secForNextBubble = .1 * Math.random();
+	}
+	bubbles.forEach( ( bb, id ) => {
+		const st = bb.style,
+			y = parseFloat( st.top ),
+			x = parseFloat( st.left ),
+			w = parseFloat( st.width ),
+			poptime = +bb.dataset.poptime,
+			bbWave = +bb.dataset.wave,
+			yInc = +bb.dataset.speed,
+			wInc = .2;
+
+		st.top = y - wInc / 2 - yInc + "px";
+		st.left = x - wInc / 2 + ( w / 64 * Math.sin( bbWave ) ) + "px";
+		st.width =
+		st.height = w + wInc + "px";
+		bb.dataset.wave = bbWave + .1;
+		bb.dataset.speed = Math.max( .04, yInc - .005 );
+		if ( poptime < currentTime ) {
+			bb.remove();
+			bubbles.delete( id );
+		} else if ( poptime - 1 * 1000 < currentTime ) {
+			bb.classList.add( "pop" );
+		}
+	} );
+	requestAnimationFrame( frame );
+}
+
+
+window.onresize();
+frame();
+
+
+    
+</script>
+
+{% endblock %}
+

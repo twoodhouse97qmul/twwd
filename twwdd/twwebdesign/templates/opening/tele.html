@@ -1,0 +1,269 @@
+{% extends 'opening/twwdbase.html' %}
+
+{% block tele-slide %}
+
+ {% load static %}
+
+<style>
+
+    
+    .tele-slider-holder{
+        width:1016px;
+        height:450px;
+        position:absolute;
+        margin-top:100px;
+    }
+    
+    .slide-back{
+         
+         background-image:url("{% static 'photos/tele.png' %}");
+       
+    }
+    
+    .tele-slide{
+        width:508px;
+        height:405px;
+        position:absolute;
+     
+    }
+    
+    .tele-slider-1{
+       
+        margin-left:0px;
+      
+    }
+     .tele-slider-2{
+        margin-left:508px;
+    }
+     .tele-slider-3{
+        margin-left:1016px;
+    }
+    .tele-slider-4{
+        margin-left:1524px;
+    }
+    
+     .tele-slider-5{
+     margin-left:3048px;
+       
+    }
+     .tele-slider-6{
+        margin-left:2032px;
+    }
+     .tele-slider-7{
+        margin-left:2540px;
+    }
+    
+    
+    .tele-slider-8{
+        margin-left:3556px;
+    }
+    
+     .tele-slider-9{
+        margin-left:4064px;
+    }
+    
+     .tele-slider-10{
+        margin-left:4572px;
+    }
+    
+     .tele-slider-11{
+        margin-left:1524px;
+    }
+    
+    
+    .block-1{
+        z-index:10;
+    
+    }
+    
+    .block-2{
+        z-index:1;
+       
+    }
+    
+    .push-waiting{
+        margin-left:1500px;
+    }
+ 
+
+</style>
+
+
+ <div class = "name-div push-waiting"> <h1>Eroica Mildmay</h1></div>
+
+    <div class = "tele-slider-holder">
+
+        <div class = "tele-slider-1 slide-back tele-slide block-1" id = "mr_slide"></div>
+        <div class = "tele-slider-2 slide-back tele-slide block-1"></div>
+        <div class = "tele-slider-3 slide-back tele-slide block-1"></div>
+        <div class = "tele-slider-4 slide-back tele-slide block-1"></div>
+        <div class = "tele-slider-5 slide-back tele-slide block-2" ></div>
+        <div class = "tele-slider-6 slide-back tele-slide block-2"></div>
+        <div class = "tele-slider-7 slide-back tele-slide block-2"></div>
+        <div class = "tele-slider-8 slide-back tele-slide block-2"></div>
+       
+       
+        
+
+    </div>
+
+<div class = "text-div push-waiting"><h2>Lines of communication</h2></div>
+
+
+
+
+
+
+<script src = "https://cdnjs.cloudflare.com/ajax/libs/d3/5.7.0/d3.min.js"></script>
+<script src='http://cdnjs.cloudflare.com/ajax/libs/gsap/1.18.0/TweenMax.min.js'></script>
+
+ <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script>
+    
+    /*
+     timerd = setTimeout(function(){
+         $('.name-div').animate({
+        'marginLeft' : "-=600px" //moves left
+        
+        },1000,);
+          timerd = setTimeout(function(){
+         $('.text-div').animate({
+        'marginLeft' : "-=600px" //moves left
+        
+        },1000,);
+     },1000);
+     },2000);
+         
+     
+    */
+   
+    
+   runAnimation();
+     
+ function runAnimation(){
+          
+          
+           $(".block-1").animate({
+        'marginLeft' : "-=2032px" //moves left
+        
+        },14000,"linear");
+     
+    
+     
+     $(".block-2").animate({
+        'marginLeft' : "-=2032px" //moves left
+        
+        },14000,"linear");
+     
+      
+     
+     
+      timy5 = setTimeout(function(){
+         
+         
+          $(".block-1").animate({
+        'marginLeft' : "+=2032px" //moves left
+        
+        },0);
+         
+          timy4 = setTimeout(function(){
+          
+          /* $(".block-1").animate({
+        'marginLeft' : "-=2032px" //moves left
+        
+        },14000); */
+              
+              
+               $(".block-2").animate({
+        'marginLeft' : "+=2032px" //moves left
+        
+        },0);
+              runAnimation();
+             },7000);
+          
+        
+             },7000);
+     
+     
+    
+     
+     
+     //switch the classes now!!!
+        
+     
+ }
+   /*
+     
+     timy = setTimeout(function(){
+         
+          $(".block-2").animate({
+        'marginLeft' : "-=4572px" //moves left
+        
+        },2000);
+         
+         timy5 = setTimeout(function(){
+         // $(".block-1").css('zIndex',1);
+         //$(".block-2").css('zIndex',10);
+             },100);
+         
+          
+        
+         repositionElements();
+     },1000);
+     
+
+     
+ }
+    
+    function repositionElements(){
+           $(".block-1").css('zIndex',0);
+          $(".block-1").animate({
+        'marginLeft' : "+=4572px" //moves left
+        
+        },0);
+        
+        timy3 = setTimeout(function(){
+            
+        timy4 = setTimeout(function(){
+         // $(".block-1").css('zIndex',10);
+         //$(".block-2").css('zIndex',1);
+             },100);
+         
+             $(".block-2").animate({
+        'marginLeft' : "+=4572px" //moves left
+        
+        },0);
+            
+            runAnimation();
+           
+     },1000);
+     
+        
+    }
+    
+   
+      
+     
+    
+   */
+    
+
+    
+
+    
+    
+     
+
+</script>
+
+
+
+
+
+{% endblock %}
+
+
+
+
+
+

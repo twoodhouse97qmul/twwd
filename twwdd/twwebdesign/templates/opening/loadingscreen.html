@@ -1,0 +1,169 @@
+{% extends 'opening/proginput.html' %}
+
+{% block loading-screen %}
+
+<style>
+    
+    .loading-screen{
+        position:fixed;
+        background-color: white;
+        width: 100%;
+        height:100%;
+        min-width:500px;
+        min-height: 500px;
+        z-index:999999999999999999999999999;
+    }
+    
+    .loading-text{
+        margin:0 auto;
+        margin-top:300px;
+        text-align: center;
+        /* SET FONT */
+    }
+    
+    .loader-holder{
+        position:fixed;
+        margin-top: 50px;
+        width:40%;
+        left:30%;
+        right:30%;
+ 
+        
+    }
+    
+    
+
+.loader {
+  
+      
+    width:100%;
+    height: 1em;
+    font-size: 10px;
+    
+    
+}
+
+.loader span {
+    position: absolute;
+    width: inherit;
+    height: inherit;
+}
+
+
+</style>
+
+<div class = "removerr">
+<div class = "loading-screen">
+    
+    <div class = "loading-text">
+        <h1>Loading...</h1>
+    </div>
+    <div class = "loader-holder">
+    <div class="loader"></div>
+        </div>
+        
+</div>
+    </div>
+
+<script src = "https://cdnjs.cloudflare.com/ajax/libs/d3/5.7.0/d3.min.js"></script>
+<script src='http://cdnjs.cloudflare.com/ajax/libs/gsap/1.18.0/TweenMax.min.js'></script>
+
+<script>
+    
+    const HUE_DEG = 12;
+const COUNT = 360 / HUE_DEG;
+
+d3.select('.loader')
+    .selectAll('span')
+    .data(d3.range(COUNT).map(d => d + 1))
+    .enter()
+    .append('span')
+    .style('background-color', (d) => d % 2 === 1
+        ? `hsl(${d * HUE_DEG}, 100%, 65%)`
+        : 'black');
+   
+
+
+    
+     timeOut2 = setTimeout(function()
+            {
+                
+        let animation = new TimelineMax({repeat: -1});
+animation.staggerFrom('.loader span', 0.5, {scaleX: 0}, 0.4);
+            },1000);
+    
+    
+    
+    timeOut3 = setTimeout(function()
+            {
+         
+    
+    removeLoadingScreen();
+    
+      },5000);
+    
+    
+    
+    function removeLoadingScreen(){
+    
+           $(".loading-text").fadeOut();
+        timeoutnew = setTimeout(function(){
+        $(".loading-text").html("<h1>Come On In!</h1>");
+        $(".loading-text").fadeIn();
+            
+        },400);
+        
+        
+        
+         
+          timeOut3 = setTimeout(function()
+            {
+         
+        $(".loading-text").fadeOut();
+        $(".loader").fadeOut();
+              
+               timeOut3 = setTimeout(function()
+            {
+         
+         $(".removerr").fadeOut();
+                   
+                   timeOut4 = setTimeout(function()
+            {
+         
+         $(".removerr").html("");
+                
+
+            },2000);
+                
+
+            },200);
+                
+
+            },2000);
+         
+         
+         
+         
+         
+         
+          
+        
+    }
+    
+    
+    
+     
+
+</script>
+
+
+
+
+
+{% endblock %}
+
+
+
+
+
+

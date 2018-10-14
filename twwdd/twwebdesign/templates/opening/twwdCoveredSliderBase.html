@@ -1,0 +1,311 @@
+
+{% extends 'opening/frontcover.html' %}
+
+{% block page_content %}
+
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+
+  <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.3.5/css/swiper.min.css'>
+
+ {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap.min.css' %}" />
+    <link rel="stylesheet" href="{% static 'css/twwdSlider.css' %}">
+
+<style>
+    
+     .wrapper{
+        margin-top:15px;
+        position:fixed;
+         width:100%;
+         height:100%;
+         z-index:150;
+         
+        
+      
+    }
+    
+    .navbar{
+        position: fixed;
+        top:0;
+    }
+    
+    #hoper{
+      
+        height:600px;
+        margin-top:0px;
+        border-radius:10px;
+        padding-top:0;
+        margin-left:50px;
+        margin-right:50px;
+    }
+
+    #canvas{ 
+        
+        background-image:url("{% static 'photos/textured.jpg' %}");
+        background-size:cover;
+        margin: 0 auto;
+        border:solid;
+        border-width:2px;
+        border-color:#e3ab20;
+        border-left:0;
+        border-top:0;
+        border-right:0;
+      
+        
+    }
+    
+     .news-slider-next{
+        right:0px;
+    }
+    
+    .news-slider-prev{
+        left:0px;
+    }
+    
+    .news-slider__pagination{
+        position: fixed;
+        width:30%;
+        left:35%;
+        right:35%;
+        top:0;
+    }
+    
+    .mid-arrows{
+        position:relative;
+        bottom:150px;
+    }
+    .news-date__title{
+        margin-top:25px;
+        font-size: 25px;
+    }
+    
+      .sign-up-holder{
+       
+        
+    
+         
+    }
+    
+    #contact-item{
+       
+      
+    }
+    
+    #cont-txt{
+        margin-bottom:200px;
+    }
+    
+    .no_underline:hover{
+        text-decoration: none;
+    }
+    
+    
+    .contact-holder{
+        position:absolute;
+        width:100%;
+        min-width: 330px;
+        height:900px;
+        z-index:0;
+        border-radius: 10px;
+        margin-top:0;
+    }
+    
+    
+    .con-backing{
+        background-color: black;
+        opacity:0.9;
+        position:relative;
+        margin-top:-1000px;
+        width:100%;
+        height:2000px;
+        min-width: 330px;
+        
+    }
+   
+    
+    
+    
+    
+    
+</style>
+
+<div class = "sign-up-holder" id = "suhold">
+</div>
+
+
+
+
+
+
+ <div class="wrapper">
+
+  <div class="background">
+      {% load static %}
+    <img src="{% static 'photos/textured.jpg' %}" alt="">
+  </div>
+  <div class="item-bg"></div>
+
+  <div class="news-slider">
+    <div class="news-slider__wrp swiper-wrapper">
+        
+         
+        
+        
+        
+      <div class="news-slider__item swiper-slide">
+        <div class="news__item no_underline" id = "abcdff">
+          {% block slide_1_block %}
+            {% endblock %}
+
+        </div>
+      </div>
+
+      <div class="news-slider__item swiper-slide">
+        <a href="#" class="news__item no_underline">
+           {% block slide_2_block %}
+{% endblock %}
+         
+        </a>
+      </div>
+
+      <div class="news-slider__item swiper-slide">
+       
+<a href="#" class="news__item no_underline">
+        {% block slide_3_block %}
+{% endblock %}
+        </a>
+      </div>
+
+  
+
+      <div class="news-slider__item swiper-slide" id = "hoper">
+        <a href="#" class="news__item no_underline" id = "contact-item">
+        {% block slide_4_block %}
+{% endblock %}
+        </a>
+      </div>
+    
+
+
+      <div class="news-slider__item swiper-slide" >
+        <a href="#" class="news__item no_underline" >
+              {% block slide_5_block %}
+{% endblock %}
+          
+        </a>
+      </div>
+        
+         <div class="news-slider__item swiper-slide" >
+        <a href="#" class="news__item no_underline">
+              {% block slide_6_block %}
+{% endblock %}
+          
+        </a>
+      </div>
+        
+         <div class="news-slider__item swiper-slide" >
+        <a href="#" class="news__item no_underline">
+              {% block slide_7_block %}
+{% endblock %}
+          
+        </a>
+      </div>
+        
+          <div class="news-slider__item swiper-slide" >
+        <a href="#" class="news__item no_underline">
+              {% block slide_8_block %}
+{% endblock %}
+          
+        </a>
+      </div>
+        
+        
+    </div>
+      
+        <div class="news-slider__arrows mid-arrows">
+        <button class="news-slider__arrow news-slider-prev toppy">
+          <span class="icon-font">
+            <svg class="icon icon-arrow-left"><use xlink:href="#icon-arrow-left"></use></svg>
+          </span>
+        </button>
+        <button class="news-slider__arrow news-slider-next toppy">
+          <span class="icon-font">
+            <svg class="icon icon-arrow-right"><use xlink:href="#icon-arrow-right"></use></svg>
+          </span>
+        </button>
+      </div>
+
+    <div class="news-slider__ctr">
+
+    
+
+      <div class="news-slider__pagination"></div>
+
+    </div>
+
+  </div>
+
+</div>
+
+<svg hidden="hidden">
+  <defs>
+    <symbol id="icon-arrow-left" viewBox="0 0 32 32">
+      <title>arrow-left</title>
+      <path d="M0.704 17.696l9.856 9.856c0.896 0.896 2.432 0.896 3.328 0s0.896-2.432 0-3.328l-5.792-5.856h21.568c1.312 0 2.368-1.056 2.368-2.368s-1.056-2.368-2.368-2.368h-21.568l5.824-5.824c0.896-0.896 0.896-2.432 0-3.328-0.48-0.48-1.088-0.704-1.696-0.704s-1.216 0.224-1.696 0.704l-9.824 9.824c-0.448 0.448-0.704 1.056-0.704 1.696s0.224 1.248 0.704 1.696z"></path>
+    </symbol>
+    <symbol id="icon-arrow-right" viewBox="0 0 32 32">
+      <title>arrow-right</title>
+      <path d="M31.296 14.336l-9.888-9.888c-0.896-0.896-2.432-0.896-3.328 0s-0.896 2.432 0 3.328l5.824 5.856h-21.536c-1.312 0-2.368 1.056-2.368 2.368s1.056 2.368 2.368 2.368h21.568l-5.856 5.824c-0.896 0.896-0.896 2.432 0 3.328 0.48 0.48 1.088 0.704 1.696 0.704s1.216-0.224 1.696-0.704l9.824-9.824c0.448-0.448 0.704-1.056 0.704-1.696s-0.224-1.248-0.704-1.664z"></path>
+    </symbol>
+  </defs>
+</svg>
+
+
+ 
+        <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+          <script src='http://cdnjs.cloudflare.com/ajax/libs/three.js/r75/three.min.js'></script>
+
+<script src='https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.3.5/js/swiper.min.js'></script>
+
+<script src='https://s3-us-west-2.amazonaws.com/s.cdpn.io/175711/bas.js'></script>
+<script src='https://s3-us-west-2.amazonaws.com/s.cdpn.io/175711/FontUtils.js'></script>
+<script src='https://s3-us-west-2.amazonaws.com/s.cdpn.io/175711/pnltri.min.js'></script>
+<script src='https://s3-us-west-2.amazonaws.com/s.cdpn.io/175711/droid_sans_bold.typeface.js'></script>
+<script src='http://cdnjs.cloudflare.com/ajax/libs/gsap/1.18.0/TweenMax.min.js'></script>
+
+  
+  {% load static %}
+    <script  src="{% static 'js/twwdSlider.js' %}"></script>
+
+
+  <script>
+      
+   
+    
+    $(".sign-up-holder").hide();
+          
+
+    
+
+      
+      
+      
+    
+      
+	THREE.ShapeUtils.triangulateShape = (function () {
+	        var pnlTriangulator = new PNLTRI.Triangulator();
+	        return function triangulateShape(contour, holes) {
+	            return pnlTriangulator.triangulate_polygon([contour].concat(holes));
+	        };
+	    })();
+      
+      
+</script>
+
+
+
+
+
+{% endblock %}

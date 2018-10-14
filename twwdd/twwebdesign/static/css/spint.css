@@ -1,0 +1,29 @@
+html, body {
+  width: 100vw;
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+  font-family: Monospace;
+  font-size: 13px;
+  text-align: center;
+  font-weight: bold;
+  color: #fff;
+  overflow: hidden;
+}
+
+#info {
+  position: absolute;
+  top: 0px;
+  width: 100%;
+  padding: 5px;
+}
+
+a {
+  color: red;
+}
+
+canvas + div {
+  position: fixed;
+  top: 0;
+  left: 0;
+}
