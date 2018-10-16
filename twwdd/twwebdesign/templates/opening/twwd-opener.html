@@ -45,6 +45,38 @@
         background-color: red;
     }
     
+    
+    .slightly_small{
+        font-size: 90%;
+    }
+    
+    
+    .phone__arrows{
+        position:fixed;
+        background-color: red;
+        width:80%;
+        display: none;
+        bottom:0;
+    }
+    
+    .faded{
+        opacity: 0;
+        font-weight: 0;
+    }
+    
+    
+    
+    
+    /* Smartphones ----------- */
+@media only screen and (max-width: 760px) {
+  .news__imgP { display: none; }
+    .phone__arrows{
+        display:block;
+    }
+    
+    
+}
+    
 </style>
 
 
@@ -67,10 +99,14 @@
 
           </p>
 
-          <div class="news__img">
+          <div class="news__img news__imgP">
              {% load static %}
             <img src="{% static 'photos/welcome-logo.jpg' %}" alt="news">
           </div>
+
+      
+
+
 
 
 {% endblock %}
@@ -80,8 +116,8 @@
 
 
 <div class="news-date" id = "cont-ND">
-    <span class="news-date__title" id = "cont-T1">Contact</span>
-    <span class="news-date__txt" id = "cont-T2">Contact Forms made simple and stylish.</span>      
+    <span class="news-date__title" id = "cont-T1">Contact<br></span>
+       
 </div>
 
 
@@ -247,9 +283,8 @@
        
 
           <p class="news__txt">
-            something about visuals themes and styles. A wide range of themes at my disposal, I have frequently created new colour schemes in order to match your companies existing branding.
+           Unlike many other website services, I offer much more than generic templates that will be used on hundreds of websites, I’m always happy to create custom themes and designs in order to add personality to your website and to accurately represent who you are.
 
-GONE ARE THE DAYS OF DREARY STATIC WEBSITES WHICH ARE A CHORE TO READ - your website has the potential to be so much more. Helping you to grab your audiences attention and keep it.
           </p>
 
            <div class="news__img bingpot">
@@ -268,7 +303,7 @@ GONE ARE THE DAYS OF DREARY STATIC WEBSITES WHICH ARE A CHORE TO READ - your web
               
           </p>
 
-          <div class="news__img">
+          <div class="news__img  news__imgP">
             {% load static %}
             <img src="{% static 'photos/potential.jpg' %}" alt="news">
           </div>
@@ -284,7 +319,7 @@ GONE ARE THE DAYS OF DREARY STATIC WEBSITES WHICH ARE A CHORE TO READ - your web
          
      
 
-          <p class="news__txt">
+          <p class="news__txt slightly_small">
             
         
               
@@ -298,7 +333,7 @@ GONE ARE THE DAYS OF DREARY STATIC WEBSITES WHICH ARE A CHORE TO READ - your web
 
           </p>
 
-          <div class="news__img">
+          <div class="news__img  news__imgP">
             {% load static %}
             <img src="{% static 'photos/analytics.jpg' %}" alt="news">
           </div>
@@ -343,13 +378,13 @@ Make your website <b>Come Alive.</b> The sky really is the limit.<br><br>
 
           <p class="news__txt">
             
-              Cyber security is what I dedicate a lot of my personal time to outside of web developement, Currently I am waiting to begin my job within the field of cyber security for in late November. For this reason it will be of great personal embarressent to me if any of the sites I design are found to be vulnerable.<br><br>
+              Cyber security is what I dedicate a lot of my personal time to outside of web developement. For this reason it will be of great personal embarressment to me if any of the sites I design are found to be vulnerable.<br><br>
               
             You can be at ease knowing that I will professionally weigh all the risks against your site and ensure you have the correct mechanisms in place to ensure you have complete peace of mind.
         
           </p>
 
-          <div class="news__img">
+          <div class="news__img  news__imgP">
                {% load static %}
             <img src="{% static 'photos/security.png' %}" alt="news">
           </div>
@@ -372,7 +407,7 @@ Make your website <b>Come Alive.</b> The sky really is the limit.<br><br>
             
           </p>
 
-          <div class="news__img">
+          <div class="news__img  news__imgP">
                {% load static %}
             <img src="{% static 'photos/adminView.jpg' %}" alt="news">
           </div>

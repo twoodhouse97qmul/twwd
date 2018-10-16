@@ -341,32 +341,7 @@
         </div>
     </div>
 
- <a href = "/about">
-<div class = "home-page-icon right-icon top-icon hoverText350">
-   
-<i class="fas fa-home" aria-hidden="true"></i>
- 
-</div>
-       </a>
 
-
-
-<div class = "home-page-icon left-icon top-icon hoverText350">
-<i class="fas fa-bars" aria-hidden="true"></i>
-
-</div>
-
-<a href = "/past">
-<div class = "home-page-icon left-icon bottom-icon hoverText350">
-<i class="fas fa-archway" aria-hidden="true"></i>
-
-</div>
-</a>
-
-<div class = "home-page-icon right-icon bottom-icon hoverText350">
-<i class="fas fa-envelope" aria-hidden="true"></i>
-
-</div>
 
 
 <div class = "can-Diss">
@@ -424,6 +399,18 @@
 
 
 <script>
+    
+    var screenWidth = $(window).width();
+           
+            var notcompCO = 750;
+            var on_mobile = false;
+           
+            if(screenWidth<=notcompCO){
+               //MAKE FRONT LOADER DISSAPPEAR AFTER X SECONDS -- INCASE THEY HAVENT SCROLLED UP ENOUGH.
+                on_mobile = true;
+                
+               }
+
     
     /*
     
@@ -600,14 +587,26 @@ var W = window.innerWidth, H = window.innerHeight;
         $(".logo-holder").fadeOut();
    }
         
+        
+        if($(window).scrollTop() + $(window).height() > $(document).height() - 500) {
+                if(on_mobile){
+                   document.getElementById("coverer").style.zIndex = "1";
+                   $(".page-cover").html("");
+          
+                   }
+   }
+        
    
          if($(window).scrollTop() + $(window).height() > $(document).height() - 300) {
        dissappearTopIcons();
    }
         
            if($(window).scrollTop() + $(window).height() > $(document).height() - 60) {
+               if(!on_mobile){
+               document.getElementById("coverer").style.zIndex = "1";
               $(".page-cover").html("");
-            document.getElementById("coverer").style.zIndex = "1";
+           }
+            
                  
    }
 });
@@ -616,7 +615,7 @@ var W = window.innerWidth, H = window.innerHeight;
     function dissappearIcons(){
         
         //remove icons
-         $(".bottom-icon").fadeOut();
+         //$(".bottom-icon").fadeOut();
         
         
         //remove logo
@@ -632,7 +631,7 @@ var W = window.innerWidth, H = window.innerHeight;
         
         //remove logo
         
-        $(".top-icon").fadeOut();
+        //$(".top-icon").fadeOut();
         
    
         
