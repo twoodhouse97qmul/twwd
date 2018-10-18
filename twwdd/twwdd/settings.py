@@ -25,7 +25,10 @@ SECRET_KEY = 'ioau6n3$0^&+goe=ui&2bu+8i5()fn$dm45=h!v1&fj#i$=hi6'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [
+'twwdaccount.pythonanywhere.com',
+
+]
 
 
 # Application definition
