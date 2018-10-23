@@ -36,7 +36,17 @@
     <link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap.min.css' %}" />
   
     
+    <style>
     
+        #mess-in{
+        
+        font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+        letter-spacing: 1px;
+        font-weight: normal;
+        
+    }
+        
+    </style>
                     
                    
     
@@ -128,6 +138,8 @@
             if( $(this).val().trim().length > 0 )
                 active = true;
         });
+        
+       
 
         if( active )
             app_cover.addClass('active');
@@ -350,6 +362,8 @@
     });
 
     inp.on('keyup',checkInput);
+    $("#mess-in").on('keyup',checkInput);
+    
 
     prevAction.on('click',moveToPreviousStep);
     nextAction.on('click',moveToNextStep);
