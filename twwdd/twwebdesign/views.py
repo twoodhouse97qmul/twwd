@@ -20,6 +20,7 @@ from django.http import HttpResponse
 from django.http import JsonResponse
 import json
 from django.views.decorators.csrf import csrf_exempt
+from .eroica_mail import Eroica_SMTP;
 
 
 
@@ -32,6 +33,12 @@ def cont(request):
         print(namm)
         print(emm)
         print(mess)
+
+        email_help = Eroica_SMTP();
+        try:
+            email_help.send_mail(namm,emm,mess);
+        except:
+            print("email-send-failure")
 
 
         Message.objects.create(
