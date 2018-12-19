@@ -122,6 +122,12 @@ def col_change(request):
     }
     return render(request, 'opening/spint.html', context)
 
+def gradzone(request):
+    context = {
+
+    }
+    return render(request, 'gradzone.html', context)
+
 def twhome(request):
     context = {
 

@@ -21,7 +21,7 @@ app_name = 'twwebdesign'
 
 
 urlpatterns = [
-    path('', views.twhome, name='index'),
+    path('', views.gradzone, name='index'),
     path('post/contact-me', views.post_new, name='post_new'),
     path('email/post/contact-me', views.post_new, name='post_new'),
     path('email/contact-me', views.post_new, name='post_new'),

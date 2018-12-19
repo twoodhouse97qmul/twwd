@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="en" >
+
+<head>
+    
+    {% load static %}
+     <link rel="stylesheet" type="text/css" href="{% static 'css/font-awesome.min.css' %}" />
+    <link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap.min.css' %}" />
+
+  <meta charset="UTF-8">
+  <title>GradZone</title>
+  
+  
+  
+
+
+  
+</head>
+    
+    <style>
+    
+    * {
+  box-sizing: border-box;
+}
+
+html {
+  font: 0.625em/1.4 "Lato", Helvetica Neue, sans;
+}
+
+body {
+  font-size: 1.6em;
+  margin: 4rem;
+  background-color: #f8f8f8;
+  color: #787878;
+}
+
+p {
+  margin: 0;
+}
+
+h1, h2, h3, h4 {
+  line-height: 1.2;
+  font-weight: 300;
+  margin: 0;
+}
+
+h3 {
+  font-size: 1.8rem;
+  font-weight: 400;
+  margin-bottom: 0.65em;
+  color: #474d57;
+}
+
+h4 {
+  font-size: 1.8rem;
+  margin-bottom: 0.25em;
+  color: #bf2d24;
+}
+
+.layout {
+  margin: auto;
+    padding-top:50px;
+}
+
+.CheckList {
+  max-width: 48em;
+}
+
+.CheckList-row {
+  display: table;
+  width: 100%;
+  background-color: white;
+}
+.CheckList-row.completed {
+  background-color: transparent;
+}
+
+.CheckList-row + h3 {
+  margin-top: 2.4rem;
+}
+
+.CheckList-row:last-child > .CheckList-cell {
+  border-width: 0;
+}
+
+.CheckList-cell {
+  display: table-cell;
+  padding: 1.6rem;
+  border-bottom: 1px solid #c9c9c9;
+  vertical-align: middle;
+}
+
+.CheckList-icon {
+  width: 98px;
+  height: 98px;
+  text-align: center;
+}
+
+.CheckList-hint {
+  display: none;
+}
+@media (min-width: 40em) {
+  .CheckList-hint {
+    display: block;
+  }
+}
+
+.completed .CheckList-hint {
+  display: none;
+}
+
+.completed h4 {
+  color: inherit;
+}
+        
+        
+        
+    .navbar{
+        background-image:url("{% static 'newback.jpg' %}");
+        background-size:cover;
+        border-color:#e3ab20;
+        width:100%;
+        position:fixed;
+        z-index:300;
+        left:0;
+        right:0;
+        top:0;
+        border-width: 0;
+        border-radius:0;
+        
+   
+        
+        
+    }
+
+    
+    </style>
+
+<body>
+    
+     <nav class="navbar navbar-default pre-LI-navbar">
+            
+           
+            
+              
+            
+            <div class="container-fluid">
+                
+                <!-- Brand and toggle get grouped for better mobile display -->
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded"false">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    
+                    
+                </div>
+                
+                
+                <!-- Collect the nav links, forms, and other content for toggling -->
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                    <ul class="nav navbar-nav">
+                        <li>
+                            <a href="home">
+                                <h4 class = "wSmoke">Home  </h4>
+                                
+                               
+                                <span class="sr-only">
+                                    (current)
+                                </span>
+                            </a>
+                        </li>
+                        
+                        <li>
+                            <a href="/about">
+                               <h4 class = "wSmoke"> 
+                                   </h4>
+                            </a>
+                        </li>
+                        
+                       
+                        
+                        <li>
+                              
+                            <a href="/past">
+                                <h4 class = "wSmoke">
+                                    Discussions
+                                    
+                                   </h4>
+                            </a>
+                        </li>
+                        
+                         <li>
+                            <a href="contact">
+                                <h4 class = "wSmoke">
+                               
+                                    
+                                    Search</h4>
+                                
+                            </a>
+                        </li>
+                        
+                        
+                    </ul>
+                    
+                
+                    
+                    
+                    
+                    
+                    <!-- Right Hand Side Of Navbar: -->
+                    <ul class="nav navbar-nav navbar-right">
+                       
+                          
+                        <a href = "home">
+                            
+                             <div class = "nav-logo-div"></div>
+                           
+                            </a>
+                        
+                       
+                        
+                    </ul>
+                </div><!-- /.navbar-collapse -->
+            </div><!-- /.container-fluid -->
+             
+        </nav>
+
+  <link href='https://fonts.googleapis.com/css?family=Lato:300,400' rel='stylesheet' type='text/css'>
+<div class="layout">
+
+<div class="CheckList layout">
+    <h3>First Days In The Office</h3>
+  <div class="CheckList-row">
+    <div class="CheckList-cell CheckList-icon">
+      <?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="59px" height="63px" viewBox="0 0 59 63" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
+    <!-- Generator: Sketch 3.1.1 (8761) - http://www.bohemiancoding.com/sketch -->
+    <title>account-icon</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
+        <g id="Desktop" sketch:type="MSArtboardGroup" transform="translate(-190.000000, -760.000000)">
+            <g id="account-icon" sketch:type="MSLayerGroup" transform="translate(178.000000, 750.000000)">
+                <g id="Oval-11-+-Rectangle-70-+-Oval-16" transform="translate(13.000000, 10.000000)" sketch:type="MSShapeGroup">
+                    <path d="M29.978325,26.2348915 C28.479426,20.6721348 26.8730264,21.0259725 20.3677771,18.7255881 L20.3677771,18.7255881 C22.3313791,16.2713029 23.6020468,12.5721338 23.6020468,9.21689204 C23.6020468,3.5609488 19.9913215,0 15.5372662,0 C11.0832109,0 7.47248568,3.5609488 7.47248568,9.21689204 C7.47248568,12.5633531 8.73651139,16.2519438 10.6913533,18.7062939 C4.46940895,20.7335894 2.96022659,20.6391553 1.06438081,27.6506761 C1.14232915,28.4175284 -0.473823712,34.8304275 -0.360061189,35.4735238 C0.0526646177,37.8066511 11.1127395,38.5068428 19.9901293,37.8895435 C21.7001105,32.8410779 25.3146205,28.6710825 29.978325,26.2348915 Z" id="Oval-11" fill="#BF2D24"></path>
+                    <path d="M38,43 L38,35 L41,35 L41,43 L49,43 L49,46 L41,46 L41,54 L38,54 L38,46 L30,46 L30,43 L38,43 Z" id="Rectangle-70" fill="#BF2D24"></path>
+                    <ellipse id="Oval-16" stroke="#BF2D24" stroke-width="3" cx="39.5" cy="44.5" rx="16.1875" ry="16.1875"></ellipse>
+                </g>
+                <rect id="Rectangle-67" sketch:type="MSShapeGroup" x="0" y="0" width="80" height="80"></rect>
+            </g>
+        </g>
+    </g>
+</svg>
+    </div>
+    <div class="CheckList-cell">
+      <h4>Complete Your Connect CV</h4>
+      <p class="CheckList-hint">Add Bio, Skills etc...</p>
+    </div>
+  </div>
+  <div class="CheckList-row">
+    <div class="CheckList-cell CheckList-icon">
+      <?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="39px" height="57px" viewBox="0 0 39 57" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
+    <!-- Generator: Sketch 3.1.1 (8761) - http://www.bohemiancoding.com/sketch -->
+    <title>location-icon</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
+        <g id="Desktop" sketch:type="MSArtboardGroup" transform="translate(-196.000000, -883.000000)">
+            <g id="location-icon" sketch:type="MSLayerGroup" transform="translate(176.000000, 871.000000)">
+                <g id="Oval-6" transform="translate(22.000000, 14.000000)" stroke-width="3" stroke="#C02D23" stroke-linecap="round" sketch:type="MSShapeGroup" stroke-linejoin="round">
+                    <path d="M17.5,53 C17.5,53 35,27.2696315 35,17.5674157 C35,7.86519993 27.1649831,0 17.5,0 C7.83501688,0 0,7.86519993 0,17.5674157 C0,27.2696315 17.5,53 17.5,53 Z M17.7966102,25.9470305 C22.2429704,25.9470305 25.8474576,22.3286576 25.8474576,17.8651685 C25.8474576,13.4016794 22.2429704,9.78330658 17.7966102,9.78330658 C13.3502499,9.78330658 9.74576271,13.4016794 9.74576271,17.8651685 C9.74576271,22.3286576 13.3502499,25.9470305 17.7966102,25.9470305 Z"></path>
+                </g>
+                <rect id="Rectangle-67" sketch:type="MSShapeGroup" x="0" y="0" width="80" height="80"></rect>
+            </g>
+        </g>
+    </g>
+</svg>
+    </div>
+    <div class="CheckList-cell">
+      <h4>Get Started With Mandatory Trainging</h4>
+      <p class="CheckList-hint">Let us know where you are so we can show you who's nearby</p>
+    </div>
+  </div>
+    <div class="CheckList-row">
+    <div class="CheckList-cell CheckList-icon">
+      <?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="66px" height="62px" viewBox="0 0 66 62" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
+    <!-- Generator: Sketch 3.1.1 (8761) - http://www.bohemiancoding.com/sketch -->
+    <title>apperance-icon</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
+        <g id="Desktop" sketch:type="MSArtboardGroup" transform="translate(-183.000000, -1010.000000)">
+            <g id="apperance-icon" sketch:type="MSLayerGroup" transform="translate(177.000000, 1001.000000)">
+                <g id="Group" transform="translate(6.000000, 11.000000)" sketch:type="MSShapeGroup">
+                    <path d="M15.9416889,44.6519085 C21.2085818,46.5003027 22.1993992,46.0494153 23.4230325,51.3038126 C23.3839897,51.841519 24.0256669,56.3336599 23.9477346,56.7994081 C23.4870425,59.5526516 0.890518206,60.0238943 0.375444244,57.1342125 C0.290010576,56.6549103 1.50371315,51.8753506 1.44517531,51.3038126 C2.86892239,46.0780979 4.00229199,46.1484799 8.67486356,44.6375285 C7.20681142,42.8082914 6.25755018,40.0591699 6.25755018,37.565039 C6.25755018,33.3496417 8.96914179,30.6956522 12.3140595,30.6956522 C15.6589773,30.6956522 18.3705689,33.3496417 18.3705689,37.565039 C18.3705689,40.0657142 17.4163197,42.8227198 15.9416889,44.6519085 Z" id="Oval-10" fill="#BF2D24"></path>
+                    <g id="Rectangle-63-+-Path-31" transform="translate(21.665485, -0.265408)" stroke="#C02D23" stroke-width="3">
+                        <path d="M5.84540775,27.7135029 C2.4976429,24.8427911 0.374004852,20.5818131 0.374004852,15.8252996 C0.374004852,7.17880295 7.37785263,0.172874006 16.0175367,0.172874006 L27.0649884,0.172874006 C35.6940894,0.172874006 42.7085202,7.18070366 42.7085202,15.8252996 C42.7085202,24.4717963 35.7046724,31.4777253 27.0649884,31.4777253 L16.0175367,31.4777253 C15.4145016,31.4777253 14.8193522,31.4435007 14.2339313,31.3768848 L3.19356828,36.4570292 L5.84540775,27.7135029 Z" id="Rectangle-63"></path>
+                    </g>
+                    <rect id="Rectangle-61" fill="#BF2D24" x="32" y="8" width="18" height="3" rx="1"></rect>
+                    <rect id="Rectangle-61" fill="#BF2D24" x="32" y="14" width="26" height="3" rx="1"></rect>
+                    <rect id="Rectangle-61" fill="#BF2D24" x="32" y="20" width="20" height="3" rx="1"></rect>
+                </g>
+                <rect id="Rectangle-67" sketch:type="MSShapeGroup" x="0" y="0" width="80" height="80"></rect>
+            </g>
+        </g>
+    </g>
+</svg>
+    </div>
+    <div class="CheckList-cell">
+      <h4>Sign Up for Skillport</h4>
+      <p class="CheckList-hint"> Fill out your apperance info and a few details about yourself.</p>
+    </div>
+  </div>
+  <h3>Once you've settled in...</h3>
+  <div class="CheckList-row">
+    <div class="CheckList-cell CheckList-icon">
+      <?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="61px" height="46px" viewBox="0 0 61 46" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
+    <!-- Generator: Sketch 3.1.1 (8761) - http://www.bohemiancoding.com/sketch -->
+    <title>photo-icon</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
+        <g id="Desktop" sketch:type="MSArtboardGroup" transform="translate(-186.000000, -1219.000000)">
+            <g id="photo-icon" sketch:type="MSLayerGroup" transform="translate(177.000000, 1201.000000)">
+                <g id="Rectangle-56-+-Path-+-Rectangle-68" transform="translate(9.000000, 18.000000)" sketch:type="MSShapeGroup">
+                    <path d="M44.8344451,6.02568493 L56.008114,6.02568493 C58.7566336,6.02568493 61,8.26520501 61,11.027793 L61,40.9978919 C61,43.7651516 58.7650565,46 56.008114,46 L4.99188602,46 C2.24336638,46 0,43.7604799 0,40.9978919 L0,11.027793 C0,8.26053335 2.2349435,6.02568493 4.99188602,6.02568493 L16.7944209,6.02568493 L18.1855926,3.50780236 C19.2559026,1.57064753 21.9130518,0 24.120315,0 L37.5085509,0 C39.7189608,0 42.37288,1.57049661 43.4432734,3.50780236 L44.8344451,6.02568493 Z" id="Rectangle-56" stroke="#C11E1E" stroke-width="3"></path>
+                    <path d="M59.5,34.5 L47.4667036,34.5" id="Line" stroke="#C11E1E" stroke-width="3" stroke-linecap="round"></path>
+                    <path d="M13.5,34.5 L1.5,34.5" id="Line-4" stroke="#C11E1E" stroke-width="3" stroke-linecap="round"></path>
+                    <ellipse id="Oval-8" stroke="#C11E1E" stroke-width="3" cx="30.5800555" cy="26.0488331" rx="13.8719072" ry="13.77303"></ellipse>
+                    <rect id="Rectangle-68" fill="#C11E1E" x="46.4146341" y="12" width="8.58536585" height="5.96551724" rx="1"></rect>
+                </g>
+                <rect id="Rectangle-67" sketch:type="MSShapeGroup" x="0" y="0" width="80" height="80"></rect>
+            </g>
+        </g>
+    </g>
+</svg>
+    </div>
+    <div class="CheckList-cell">
+      <h4>Upgrade To Green Laptop</h4>
+      <p class="CheckList-hint">Obtain a computer able to actually do things.</p>
+    </div>
+  </div>
+  <div class="CheckList-row">
+    <div class="CheckList-cell CheckList-icon">
+      <?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="60px" height="64px" viewBox="0 0 60 64" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
+    <!-- Generator: Sketch 3.1.1 (8761) - http://www.bohemiancoding.com/sketch -->
+    <title>decription-icon</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
+        <g id="Desktop" sketch:type="MSArtboardGroup" transform="translate(-186.000000, -1338.000000)">
+            <g id="decription-icon" sketch:type="MSLayerGroup" transform="translate(178.000000, 1329.000000)">
+                <path d="M30.4259559,70.165398 C28.307049,70.1918012 26.7285781,69.8345229 26.8279116,68.6968475 C26.9272451,67.559172 26.4217977,67.3063983 30.2218457,65.1152238 C34.4416782,62.6819942 36.2220204,60.5308854 34.4278238,58.4091151 C33.3532591,57.1383628 30.9344345,56.6801825 27.1259792,56.6337065 C21.2211375,56.5616475 12.0705704,57.7050693 8,58.9080782 L12.073788,59.7451729 C16.9727903,59.8070031 21.620305,59.0899355 27.2761539,59.1589559 C30.2211465,59.1948947 31.5422157,58.7752745 32.0839358,60.1520176 C32.3193465,60.7502973 30.5408757,61.528123 28.9063672,62.4706093 C23.7184958,65.4620272 21.4439705,68.2246345 23.018248,70.7919159 C24.2078701,72.7319136 24.915432,72.9564462 29.2882773,72.8859263 C29.2882773,72.8859263 61.2834283,72.9387445 61.3922322,72.9390669 L52.4472537,70.0417376 C52.3378538,70.0414135 32.5448629,70.1389948 30.4259559,70.165398 Z" id="Path-37" fill="#BF2D24" sketch:type="MSShapeGroup"></path>
+                <g id="Rectangle-68-+-Line-+-Line-+-Line" transform="translate(50.000000, 40.000000) rotate(-30.000000) translate(-50.000000, -40.000000) translate(43.000000, 8.000000)" stroke="#BF2D24" sketch:type="MSShapeGroup">
+                    <g id="Rectangle-68-+-Line-+-Line">
+                        <path d="M3.00591905,0 C1.89808055,0 1,0.892217249 1,2.00209026 L1,54 C1,54 3.46761509,64.1719194 4.65362382,64.1719194 C5.80094842,64.1719194 8,54 8,54 L8,2.00209026 C8,0.896366344 7.11344516,0 5.99408095,0 L3.00591905,0 Z" id="Rectangle-68" stroke-width="3"></path>
+                        <path d="M0.5,50 L9.71954441,50" id="Line" stroke-width="2"></path>
+                        <path d="M0.5,8 L9.71954441,8" id="Line" stroke-width="2"></path>
+                    </g>
+                    <path d="M9.5,5.5 L11.5,5.5 C12.6045695,5.5 13.5,6.39504333 13.5,7.50343775 L13.5,30.2377285" id="Line" stroke-width="3" stroke-linecap="round"></path>
+                </g>
+                <rect id="Rectangle-67" sketch:type="MSShapeGroup" x="0" y="0" width="80" height="80"></rect>
+            </g>
+        </g>
+    </g>
+</svg>
+    </div>
+    <div class="CheckList-cell">
+      <h4>Check Our Range of Clubs and Societies</h4>
+      <p class="CheckList-hint">Write a short description about who you are and what your looking for.</p>
+    </div>
+  </div>
+</div>
+</div>
+  <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+
+  
+
+    <script>
+    
+        
+        $(document).ready( function() {
+  $('.CheckList-row').on('click', function() {
+    $(this).toggleClass('completed');
+  });
+})
+    
+    </script>
+
+
+
+
+</body>
+
+</html>
